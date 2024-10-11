@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedStore | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Yx6h1eGm1T5PtDmqcRSD+uj7y47TbBQi2mfZjFfO+YlJ8E+5iwWqG6Q/ZHOg9xx" crossorigin="anonymous">
+
+<!-- Optional Bootstrap JavaScript (for interactive components) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ql8A1SQOaIH2sxR+KsKFsqS+ko1jcTLNfuFHzEpoxm9/BOIVPU07gu3XogSluWbc" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+<div class="header">
+    <div class="container">
+        
+        {% include 'menu.html' %}
+        
+
+        {% block banner_layout %}
+        
+        {% endblock banner_layout%}
+</div>
+</div>
+
+    
+    
+    
+
+    <!-- Feadtued Categories -->
+
+    {% block content %}
+    
+    {% endblock content%}
+    <!-- Footer -->
+    {% block footer%}
+   
+    {% endblock footer%}
+
+    <!-- javascript -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
