@@ -1,0 +1,32 @@
+{% extends 'blank_layout.html' %}
+
+{% block menu %}
+{% include 'menu.html' %}
+{% endblock menu %}
+
+{% block banner_layout %}
+{% include 'account_banner.html' %}
+{% endblock banner_layout%}
+{% block extra_script %}
+<script>
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var Indicator = document.getElementById("Indicator");
+    function register() {
+        RegForm.style.transform = "translatex(0px)";
+        LoginForm.style.transform = "translatex(0px)";
+        Indicator.style.transform = "translateX(100px)";
+
+    }
+    function login() {
+        RegForm.style.transform = "translatex(300px)";
+        LoginForm.style.transform = "translatex(300px)";
+        Indicator.style.transform = "translate(0px)";
+
+    }
+</script>
+{% endblock extra_script %}
+
+{% block footer%}
+{% include 'footer.html' %}
+{% endblock footer%}
