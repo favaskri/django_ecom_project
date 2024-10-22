@@ -23,5 +23,7 @@ def product_lists(request):
 
     return render(request,'products.html',context)
 
-def product_detail(request):
-    return render(request,'product_detail.html')
+def product_detail(request,pk):
+    product=Product.objects.get(pk=pk)
+    context ={'product':product}
+    return render(request,'product_detail.html',context)
