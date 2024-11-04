@@ -9,7 +9,9 @@ class Customer(models.Model):
     name=models.CharField(max_length=200)
     address=models.TextField()
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='customer_profile')
-    phone_number=models.CharField(max_length=10)
+    phone = models.CharField(max_length=15)  
+
+
     image=models.ImageField(upload_to='media/',)
     delete_status=models.IntegerField(choices=DELETE_CHOICES,default=LIVE)
     created_at=models.DateTimeField(auto_now_add=True)
